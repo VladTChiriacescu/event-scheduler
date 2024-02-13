@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <h1>Add a new event</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ event_form.management_form }}
+        <hr>
+        {% for field in event_form %}
+            {{ field }}
+            <hr>
+        {% endfor %}
+        <hr>
+        <input type="submit">
+    </form>
+    <br>
+    <br>
+    <a href="/logout">Logout</a>
+{% endblock %}

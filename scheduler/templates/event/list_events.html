@@ -1,0 +1,27 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <h1>Upcoming events</h1>
+    {% for item in upcoming_events %}
+        {{ item | linebreaks }}
+    {% endfor %}
+    <br>
+    <br>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit" name="Schedule" value="Preview schedules"/>
+    </form>
+    <br>
+    <br>
+    <form action="" method="GET">
+        {% csrf_token %}
+        <input type="submit" name="Reset" value="Clear schedules" />
+    </form>
+    <br>
+    <br>
+    <br>
+    <a href="/events/past_events">Past events</a>
+    <br>
+    <br>
+    <a href="/logout">Logout</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <h1>Availability Form</h1>
+    Please submit your availability in the form below.
+    <form method="post">
+        {% csrf_token %}
+        {{ availability_form.management_form }}
+        {{ availability_form.as_p }}
+{#        {% for field in availability_form %}#}
+{#            {{ field }}#}
+{#            <hr>#}
+{#            <hr>#}
+{#        {% endfor %}#}
+        <hr>
+        <button type="submit">Submit</button>
+    </form>
+    <br>
+    <br>
+    <a href="/logout">Logout</a>
+{% endblock %}

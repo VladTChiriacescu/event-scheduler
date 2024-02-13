@@ -1,0 +1,24 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <h1>Sign-up form</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ employee_formset.management_form }}
+        {% for form in employee_formset %}
+            {% for field in form %}
+                {{ field }}
+                <hr>
+                <hr>
+            {% endfor %}
+            <hr>
+        {% endfor %}
+     
+        <input type="text" name="username" placeholder="Username">
+        <hr>
+        <input type="password" name="password" placeholder="Password">
+        <hr>
+        <hr>
+        <input type="submit">
+    </form>
+{% endblock %}

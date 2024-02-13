@@ -1,0 +1,11 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <h1>Past events</h1>
+    {% for item in past_events %}
+        {{ item | linebreaks }}
+    {% endfor %}
+    <br>
+    <br>
+    <a href="/logout">Logout</a>
+{% endblock %}

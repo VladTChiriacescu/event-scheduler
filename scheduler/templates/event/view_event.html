@@ -1,0 +1,14 @@
+{% extends "admin/base.html" %}
+
+{% block content %}
+    <h1>Event viewer</h1>
+    <video autoplay="autoplay" controls>
+        <source src="/static/event_videos/{{ event_id }}.mp4">
+    </video>
+    <br>
+    <br>
+    <a href="/events/past_events">Back</a>
+    <br>
+    <br>
+    <a href="/logout">Logout</a>
+{% endblock %}
